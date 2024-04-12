@@ -2,32 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  --background-color: #fafafa;
+  --primary-color: white;
+  --secondary-color: #e9ecef;
+  --highlight-color: #272729;
+  --light-text-color: #a1a1aa;
+  --paragraph-color: #52525b;
+  --content-color: #14b8a6;
+  --border-color: #f4f4f5;
+  --fill-color: #e4e4e7;
+  --icon-color: #272729;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0 5%;
+  background-color: var(--background-color);
+}
+.empty {
+  width: 3.33vw;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+#page-wrapper {
+  row-gap: 1.66vw;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 10% 4.4% 10%;
+}
+.content-wrapper {
+  padding-bottom: 10vw;
+  background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0px;
+  margin-top: 20px;
+}
+.icon {
+  height: 24px;
+  width: 24px;
+}
+#main-content {
+  background-color: var(--primary-color);
+  flex-direction: column;
+  display: flex;
+  gap: 1.7vw;
+}
+#main_right {
+  background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.7vw;
+  padding-left: 20px;
+}
+
+.dark {
+  --background-color: black;
+  --primary-color: #17171a;
+  --highlight-color: #f4f4f5;
+  --paragraph-color: #a1a1aa;
+  --border-color: #3f3f4666;
+  --fill-color: #272729;
+  --icon-color: #d4d4d8;
+}
+
+@media screen and (max-width: 1040px) {
+  .content-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  #header {
+    padding: 1.66vw 3.33vw 0.55vw 3.33vw;
+  }
+  #page-wrapper {
+    padding: 0 5% 4.4% 5%;
+    width: 100%;
+  }
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 5vw;
+    width: 100%;
+  }
+  #main_right {
+    padding-left: 0;
+    display: flexbox;
+  }
+}
+@media screen and (max-width: 720px) {
+  body {
+    margin: 0;
+  }
+  #header {
+    padding: 1.66vw 3.33vw 0.55vw 3.33vw;
+  }
+  #page-wrapper {
+    padding: 0 5% 4.4% 5%;
+    width: 100%;
+  }
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 5vw;
+    width: 100%;
+  }
+  #main_right {
+    padding-left: 0;
+    display: flexbox;
   }
 }

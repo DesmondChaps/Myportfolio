@@ -1,0 +1,17 @@
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  #main-content {
+    padding-bottom: 3.5vw;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
